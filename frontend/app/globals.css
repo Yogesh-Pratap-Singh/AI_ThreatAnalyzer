@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0f172a;         /* Deep page background */
+    --bg-secondary: #1e293b;       /* Card and table header background */
+    --bg-tertiary: #334155;        /* Hover and focus background */
+    --text-primary: #f1f5f9;       /* High-contrast text */
+    --text-secondary: #94a3b8;     /* Muted secondary text */
+    --text-tertiary: #64748b;      /* Dark placeholder text */
+    --border-color: #1e293b;       /* Layout border color */
+  }
+}
+
+html, body {
+  background-color: #0f172a;       /* Enforce Dark NOC dashboard theme */
+  color: #f1f5f9;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Modern dense custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Pulsing row effect for new items */
+@keyframes rowPulse {
+  0% { background-color: rgba(249, 115, 22, 0.2); }
+  100% { background-color: transparent; }
+}
+
+.animate-new-row {
+  animation: rowPulse 1.5s ease-out;
+}
